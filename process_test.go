@@ -13,9 +13,9 @@ func TestProcess(t *testing.T) {
 	wg.Add(3)
 	go worker("thread1", progress, wg)
 	time.Sleep(100 * time.Millisecond)
-	go worker("thread1", progress, wg)
+	go worker("thread2", progress, wg)
 	time.Sleep(100 * time.Millisecond)
-	go worker("thread1", progress, wg)
+	go worker("thread3", progress, wg)
 	wg.Wait()
 	progress.Stop()
 }
